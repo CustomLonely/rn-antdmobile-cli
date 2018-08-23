@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View, AsyncStorage } from "react-native";
 
 
 
@@ -26,7 +26,7 @@ global.api = Http;
 // 底部菜单路由
 const MainTabNavigator = TabNavigator(
   {
-   
+
     FoodIndex: {
       screen: FoodIndex
     },
@@ -88,11 +88,16 @@ export default class Main extends Component {
     super(props);
   }
   componentDidMount() {
-    
+
   }
 
   render() {
-    return <MyApp/>
+    if (!AsyncStorage.getItem("userinfo")) {
+      return <Login />
+    } else {
+      return <MyApp />
+    }
+
   }
 }
 
