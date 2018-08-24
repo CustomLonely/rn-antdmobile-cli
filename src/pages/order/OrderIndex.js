@@ -24,7 +24,7 @@ export default class OrderIndex extends Component {
     tabBarIcon: ({ focused, tintColor }) => {
       return (
         <Icon
-          name={focused ? 'foodActive' : 'success'}
+          name={focused ? 'foodActive' : 'food'}
           style={{ fontSize: 26, color: tintColor }}
         />
       );

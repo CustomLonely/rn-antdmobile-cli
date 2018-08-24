@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, AsyncStorage } from "react-native";
+import { AsyncStorage } from "react-native";
 
 
 
@@ -20,13 +20,21 @@ import SearchIndex from './pages/search/SearchIndex';
 import UserIndex from './pages/user/UserIndex';
 import Pages from './pages/Pages';
 import Register from './pages/other/Register';
-
+import Cities from './pages/other/Cities'
+//接口
+import PRegister from './port/PRegister'
+// 全局变量(统一管理)
+global.App = {
+  Config,
+  PRegister,
+};
 global.api = Http;
-
 // 底部菜单路由
 const MainTabNavigator = TabNavigator(
   {
-
+    Cities: {
+      screen: Cities
+    },
     FoodIndex: {
       screen: FoodIndex
     },
