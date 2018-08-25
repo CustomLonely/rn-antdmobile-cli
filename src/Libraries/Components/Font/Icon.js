@@ -20,7 +20,7 @@ export default class Icon extends Component {
     const { name, style } = this.props;
     //读取字体图标
     this._getCode(name);
-
+    console.log(this.font)
     return (
       <Text
         style={[
